@@ -1,0 +1,1 @@
+export { component } from './factories/component'
