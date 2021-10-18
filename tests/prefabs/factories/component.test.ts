@@ -5,7 +5,7 @@ test("component builds valid component", function (t) {
     const result = component("Text", { options: {} }, []);
     const expected = {
         name: "Text",
-        options: {},
+        options: [],
         descendants: [],
       }
 

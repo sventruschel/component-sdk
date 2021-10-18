@@ -1,5 +1,5 @@
-import { IdentityRecordBy } from "../../type-utils";
-import { PrefabComponent } from "../types/component";
+import type { IdentityRecordBy } from "../../type-utils";
+import type { PrefabComponent } from "../types/component";
 
 type RequiredAttrs = Omit<PrefabComponent, "name" | "descendants">;
 type UnresolvedAttributes = IdentityRecordBy<RequiredAttrs, 'options'>;
@@ -25,10 +25,7 @@ const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
  *
  * @param name name of the component
  * @param attrs attributes
- * 
- *    `attrs.options` is a map where each value is
- *    a function that produces an option
- * @param descendants children
+ * @param descendants a list of child prefab components
  * @returns
  */
 export const component = (
