@@ -4,10 +4,6 @@ import type { PrefabComponent } from "../types/component";
 type RequiredAttrs = Omit<PrefabComponent, "name" | "descendants">;
 type UnresolvedAttributes = IdentityRecordBy<RequiredAttrs, 'options', [string]>;
 
-// take attrs
-// map options
-// make each value identity
-
 const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
   const options = Object.entries(attrs.options).map(([key, option]) => option(key))
 
