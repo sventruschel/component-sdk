@@ -7,15 +7,14 @@ export interface PrefabComponentOptionBase {
   configuration?: unknown;
 }
 
-export interface ValueDefault {
+export interface ValueDefault extends PrefabComponentOptionBase {
   value: boolean | string[] | string | ValueConfig;
 }
 
-export interface ValueRef {
+export interface ValueRef extends PrefabComponentOptionBase {
   ref: {
     value: string | string[];
   };
 }
 
-export type PrefabComponentOption = PrefabComponentOptionBase &
-  (ValueDefault | ValueRef);
+export type PrefabComponentOption = ValueDefault | ValueRef;

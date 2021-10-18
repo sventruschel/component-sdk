@@ -1,6 +1,5 @@
 import type { IdentityRecordBy } from "../../type-utils";
 import type { PrefabComponent } from "../types/component";
-import { PrefabComponentOption } from "../types/options";
 
 type RequiredAttrs = Omit<PrefabComponent, "name" | "descendants">;
 type UnresolvedAttributes = IdentityRecordBy<RequiredAttrs, 'options', [string]>;
