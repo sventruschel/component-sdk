@@ -10,10 +10,7 @@ type UnresolvedAttributes = IdentityRecordBy<RequiredAttrs, 'options', [string]>
 // make each value identity
 
 const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
-  const options = Object.entries(attrs.options).map<PrefabComponentOption>(([key, option]) => ({
-    ...option(key),
-    key,
-  }));
+  const options = Object.entries(attrs.options).map(([key, option]) => option(key))
 
   return {
     ...attrs,
