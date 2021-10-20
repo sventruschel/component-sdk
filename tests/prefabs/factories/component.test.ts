@@ -1,6 +1,6 @@
 import test from "tape";
 import { component } from "../../../src/prefabs/factories/component";
-import { option } from "../../../src/prefabs/factories/options/index";
+import { variable, showIfTrue } from "../../../src/prefabs/factories/options";
 
 test("component builds empty component", function (t) {
   const result = component("Text", { options: {} }, []);
@@ -19,7 +19,11 @@ test("component builds an option", function (t) {
     "Text",
     {
       options: {
-        text: option("TEXT", { label: "Test Label", value: "" }),
+        content: variable("Value", {
+          configuration: {
+            condition: showIfTrue("visibility"),
+          },
+        }),
       },
     },
     []
@@ -29,10 +33,18 @@ test("component builds an option", function (t) {
     name: "Text",
     options: [
       {
-        key: "text",
-        label: "Test Label",
-        type: "TEXT",
-        value: "",
+        key: "content",
+        label: "Value",
+        type: "VARIABLE",
+        value: [],
+        configuration: {
+          condition: {
+            type: "SHOW",
+            option: "visibility",
+            comparator: "EQ",
+            value: true,
+          },
+        },
       },
     ],
     descendants: [],
