@@ -19,12 +19,10 @@ const defaultAttributes = {
   value: [],
 };
 
-export const font = (label: string, attrs: Attributes): OptionProducer => {
-  return (key) => ({
+export const font = (label: string, attrs: Attributes): OptionProducer => (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
     type: 'FONT',
     label,
   });
-};

@@ -19,12 +19,10 @@ const defaultAttributes = {
   value: [],
 };
 
-export const color = (label: string, attrs: Attributes): OptionProducer => {
-  return (key) => ({
+export const color = (label: string, attrs: Attributes): OptionProducer => (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
     type: 'COLOR',
     label,
   });
-};

@@ -22,12 +22,10 @@ const defaultAttributes = {
 export const toggle = (
   label: string,
   attrs: Attributes = {},
-): OptionProducer => {
-  return (key) => ({
+): OptionProducer => (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
     type: 'VARIABLE',
     label,
   });
-};

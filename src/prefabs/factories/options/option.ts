@@ -15,10 +15,8 @@ type Attributes =
   | Omit<ValueDefault, RedundantKeys>
   | Omit<ValueRef, RedundantKeys>;
 
-export const option = (type: string, attrs: Attributes): OptionProducer => {
-  return (key) => ({
+export const option = (type: string, attrs: Attributes): OptionProducer => (key) => ({
     ...attrs,
     key,
     type,
   });
-};

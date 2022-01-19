@@ -31,10 +31,8 @@ export const component = (
   name: string,
   attrs: UnresolvedAttributes,
   descendants: PrefabComponent[],
-): PrefabComponent => {
-  return {
+): PrefabComponent => ({
     name,
     ...resolveAttributes(attrs),
     descendants,
-  };
-};
+  });

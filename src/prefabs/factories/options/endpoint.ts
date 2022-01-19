@@ -22,12 +22,10 @@ const defaultAttributes = {
 export const endpoint = (
   label: string,
   attrs: Attributes = {},
-): OptionProducer => {
-  return (key) => ({
+): OptionProducer => (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
     type: 'ENDPOINT',
     label,
   });
-};
