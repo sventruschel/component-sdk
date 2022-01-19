@@ -1,7 +1,7 @@
-import { Icon } from ".";
-import { PrefabAction } from "../actions";
-import { PrefabComponent } from "../component";
-import { PrefabInteraction, PrefabVariable } from "../interactions";
+import { Icon } from '.';
+import { PrefabAction } from '../actions';
+import { PrefabComponent } from '../component';
+import { PrefabInteraction, PrefabVariable } from '../interactions';
 
 export interface Prefab {
   actions?: PrefabAction[];

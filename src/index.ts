@@ -1,1 +1,1 @@
-export * from './prefabs'
+export * from './prefabs';

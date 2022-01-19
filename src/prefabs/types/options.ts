@@ -21,9 +21,9 @@ export type PrefabComponentOption = ValueDefault | ValueRef;
 
 interface BaseConfiguration {
   condition?: {
-    type: "SHOW" | "HIDE";
+    type: 'SHOW' | 'HIDE';
     option: string;
-    comparator: "EQ";
+    comparator: 'EQ';
     value: string | boolean;
   };
 }
@@ -33,15 +33,18 @@ interface VariableConfigration extends BaseConfiguration {
 }
 
 interface ButtonGroupConfiguration extends BaseConfiguration {
-  as: "BUTTONGROUP";
-  dataType: "string";
+  as: 'BUTTONGROUP';
+  dataType: 'string';
   allowedInput: { name: string; value: string }[];
 }
 
 interface DropdownConfiguration extends BaseConfiguration {
-  as: "DROPDOWN";
-  dataType: "string";
-  allowedInput: { name: string; value: string }[]
+  as: 'DROPDOWN';
+  dataType: 'string';
+  allowedInput: { name: string; value: string }[];
 }
 
-export type Configration = VariableConfigration | ButtonGroupConfiguration | DropdownConfiguration
+export type Configration =
+  | VariableConfigration
+  | ButtonGroupConfiguration
+  | DropdownConfiguration;

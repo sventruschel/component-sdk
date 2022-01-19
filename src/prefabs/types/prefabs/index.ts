@@ -1,2 +1,2 @@
-export * from './prefabs'
-export * from './icon'
+export * from './prefabs';
+export * from './icon';
