@@ -60,18 +60,3 @@ export interface PrefabActionStep {
     | PrefabActionDeleteStepOption
     | AuthenticateUserStepOption;
 }
-
-export interface PrefabAction {
-  name: string;
-  ref: {
-    id: string;
-    endpointId?: string;
-  };
-  options?: {
-    ref: {
-      result: string;
-    };
-  };
-  useNewRuntime: boolean;
-  events?: PrefabActionStep[];
-}

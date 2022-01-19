@@ -21,8 +21,8 @@ const defaultAttributes = {
 
 export const buttongroup = (
   label: string,
-  attrs: Attributes = {},
   options: [string, string][],
+  attrs: Attributes = {},
 ): OptionProducer => (key) => ({
     ...defaultAttributes,
     ...attrs,

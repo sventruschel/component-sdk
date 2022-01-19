@@ -1,4 +1,4 @@
-import { Icon } from '.';
+import { Icon } from './icon';
 import { PrefabAction } from '../actions';
 import { PrefabComponent } from '../component';
 import { PrefabInteraction, PrefabVariable } from '../interactions';
