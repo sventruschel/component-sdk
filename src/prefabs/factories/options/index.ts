@@ -5,7 +5,7 @@ export { option } from './option'
 export { toggle } from './toggle'
 export { sizes } from './sizes'
 export { variable } from './variable'
-export { buttongroup } from './buttonGroup'
+export { buttongroup } from './buttongroup'
 export { dropdown } from './dropdown'
 
 export * from './configurations'

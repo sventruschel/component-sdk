@@ -10,11 +10,19 @@
   "scripts": {
     "build": "tsc",
     "build:docs": "typedoc src/index.ts --exclude **/*.test.ts",
+    "fix": "prettier --check 'src/**/*.{ts,tsx}'",
+    "fix:write": "prettier --write 'src/**/*.{ts,tsx}'",
     "test": "ts-node node_modules/tape/bin/tape tests/**/*.test.ts | tap-diff"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
     "@types/tape": "^4.13.2",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "prettier": "2.5.1",
     "tap-diff": "^0.1.1",
     "tape": "^5.3.1",
     "ts-node": "^10.3.0",
