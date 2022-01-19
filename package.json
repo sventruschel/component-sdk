@@ -10,8 +10,8 @@
   "scripts": {
     "build": "tsc",
     "build:docs": "typedoc src/index.ts --exclude **/*.test.ts",
-    "fix": "prettier --check 'src/**/*.{ts,tsx}'",
-    "fix:write": "prettier --write 'src/**/*.{ts,tsx}'",
+    "fix": "prettier --check 'src/**/*.ts'",
+    "fix:write": "prettier --write 'src/**/*.ts'",
     "lint": "eslint src/ --ext .ts",
     "test": "ts-node node_modules/tape/bin/tape tests/**/*.test.ts | tap-diff"
   },
