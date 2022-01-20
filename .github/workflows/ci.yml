@@ -2,8 +2,7 @@ name: Commit lint check
 
 on:
   pull_request:
-    branches-ignore:
-      - master
+    branches: [master]
 
 jobs:
   commit_lint:
