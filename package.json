@@ -13,9 +13,11 @@
     "fix": "prettier --check 'src/**/*.ts'",
     "fix:write": "prettier --write 'src/**/*.ts'",
     "lint": "eslint src/ --ext .ts",
-    "test": "ts-node node_modules/tape/bin/tape tests/**/*.test.ts | tap-diff"
+    "test": "ts-node node_modules/tape/bin/tape tests/**/*.test.ts | tap-diff",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/config-angular": "^16.0.0",
     "@tsconfig/node16": "^1.0.2",
     "@types/tape": "^4.13.2",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
@@ -25,7 +27,9 @@
     "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.0",
     "prettier": "2.5.1",
+    "semantic-release": "^19.0.2",
     "tap-diff": "^0.1.1",
     "tape": "^5.3.1",
     "ts-node": "^10.3.0",
