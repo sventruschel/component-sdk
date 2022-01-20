@@ -1,11 +1,11 @@
-import test from "tape";
-import { component } from "../../../src/prefabs/factories/component";
-import { variable, showIfTrue } from "../../../src/prefabs/factories/options";
+import test from 'tape';
+import { component } from '../../../src/prefabs/factories/component';
+import { variable, showIfTrue } from '../../../src/prefabs/factories/options';
 
-test("component builds empty component", function (t) {
-  const result = component("Text", { options: {} }, []);
+test('component builds empty component', (t) => {
+  const result = component('Text', { options: {} }, []);
   const expected = {
-    name: "Text",
+    name: 'Text',
     options: [],
     descendants: [],
   };
@@ -14,34 +14,34 @@ test("component builds empty component", function (t) {
   t.end();
 });
 
-test("component builds an option", function (t) {
+test('component builds an option', (t) => {
   const result = component(
-    "Text",
+    'Text',
     {
       options: {
-        content: variable("Value", {
+        content: variable('Value', {
           configuration: {
-            condition: showIfTrue("visibility"),
+            condition: showIfTrue('visibility'),
           },
         }),
       },
     },
-    []
+    [],
   );
 
   const expected = {
-    name: "Text",
+    name: 'Text',
     options: [
       {
-        key: "content",
-        label: "Value",
-        type: "VARIABLE",
+        key: 'content',
+        label: 'Value',
+        type: 'VARIABLE',
         value: [],
         configuration: {
           condition: {
-            type: "SHOW",
-            option: "visibility",
-            comparator: "EQ",
+            type: 'SHOW',
+            option: 'visibility',
+            comparator: 'EQ',
             value: true,
           },
         },
