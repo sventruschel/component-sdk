@@ -7,7 +7,7 @@ type Identities<T, Args extends Array<any>> = {
 type IdentityRecords<T, Args extends Array<any>> = {
   [K in keyof T]: Record<string, Identity<Singleton<T[K]>, Args>>;
 };
-type Singletons<T> = { [K in keyof T]: Singleton<T[K]> };
+// type Singletons<T> = { [K in keyof T]: Singleton<T[K]> };
 
 export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 export type IdentityBy<T, K extends keyof T, ARGS extends Array<any>> = Omit<

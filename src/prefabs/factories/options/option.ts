@@ -1,6 +1,5 @@
 import {
   PrefabComponentOption,
-  PrefabComponentOptionBase,
   ValueDefault,
   ValueRef,
 } from '../../types/options';

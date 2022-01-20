@@ -1,4 +1,3 @@
-import { PartialBy } from '../../../type-utils';
 import {
   PrefabComponentOption,
   ValueDefault,
