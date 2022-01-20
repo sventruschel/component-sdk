@@ -1,11 +1,17 @@
-import type { IdentityRecordBy } from "../../type-utils";
-import type { PrefabComponent } from "../types/component";
+import type { IdentityRecordBy } from '../../type-utils';
+import type { PrefabComponent } from '../types/component';
 
-type RequiredAttrs = Omit<PrefabComponent, "name" | "descendants">;
-type UnresolvedAttributes = IdentityRecordBy<RequiredAttrs, 'options', [string]>;
+type RequiredAttrs = Omit<PrefabComponent, 'name' | 'descendants'>;
+type UnresolvedAttributes = IdentityRecordBy<
+  RequiredAttrs,
+  'options',
+  [string]
+>;
 
 const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
-  const options = Object.entries(attrs.options).map(([key, option]) => option(key))
+  const options = Object.entries(attrs.options).map(([key, option]) =>
+    option(key),
+  );
 
   return {
     ...attrs,
@@ -24,11 +30,9 @@ const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
 export const component = (
   name: string,
   attrs: UnresolvedAttributes,
-  descendants: PrefabComponent[]
-): PrefabComponent => {
-  return {
+  descendants: PrefabComponent[],
+): PrefabComponent => ({
     name,
     ...resolveAttributes(attrs),
     descendants,
-  };
-};
+  });

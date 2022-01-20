@@ -1,23 +1,23 @@
 export enum InteractionOptionType {
-  Boolean = "Boolean",
-  Number = "Number",
-  String = "String",
-  Event = "Event",
-  Void = "Void",
-  Page = "Page",
-  Locale = "Locale",
+  Boolean = 'Boolean',
+  Number = 'Number',
+  String = 'String',
+  Event = 'Event',
+  Void = 'Void',
+  Page = 'Page',
+  Locale = 'Locale',
 }
 
 // TODO: Add support
 export enum InteractionOptionTypeToDo {
-  Color = "Color",
-  Endpoint = "Endpoint",
-  Filter = "Filter",
-  Font = "Font",
-  Properties = "Properties",
-  Property = "Property",
-  Size = "Size",
-  Unit = "Unit",
+  Color = 'Color',
+  Endpoint = 'Endpoint',
+  Filter = 'Filter',
+  Font = 'Font',
+  Properties = 'Properties',
+  Property = 'Property',
+  Size = 'Size',
+  Unit = 'Unit',
 }
 
 export interface InteractionCompatibility {
@@ -31,8 +31,8 @@ export interface Interaction extends InteractionCompatibility {
 }
 
 export enum InteractionType {
-  Custom = "Custom",
-  Global = "Global",
+  Custom = 'Custom',
+  Global = 'Global',
 }
 
 export interface BasePrefabInteraction<T extends InteractionType> {

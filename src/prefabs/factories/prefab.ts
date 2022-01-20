@@ -1,12 +1,12 @@
-import { PrefabComponent } from "../types/component";
-import { Prefab } from "../types/prefabs";
+import { PrefabComponent } from '../types/component';
+import { Prefab } from '../types/prefabs';
 
-type Attributes = Omit<Prefab, "name" | "structure">;
+type Attributes = Omit<Prefab, 'name' | 'structure'>;
 
 export const prefab = (
   name: string,
   attr: Attributes,
-  structure: PrefabComponent[]
+  structure: PrefabComponent[],
 ): Prefab => ({
   name,
   ...attr,

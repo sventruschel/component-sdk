@@ -1,1 +1,1 @@
-export { showIf, showIfTrue, hideIf } from './conditions'
+export { showIf, showIfTrue, hideIf } from './conditions';
