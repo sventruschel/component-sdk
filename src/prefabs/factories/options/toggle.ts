@@ -16,16 +16,15 @@ type Attributes =
   | Omit<ValueRef, RedundantKeys>;
 
 const defaultAttributes = {
-  value: [],
+  value: false,
 };
 
-export const toggle = (
-  label: string,
-  attrs: Attributes = {},
-): OptionProducer => (key) => ({
+export const toggle =
+  (label: string, attrs: Attributes = {}): OptionProducer =>
+  (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
-    type: 'VARIABLE',
+    type: 'TOGGLE',
     label,
   });

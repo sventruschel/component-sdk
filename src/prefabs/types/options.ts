@@ -19,7 +19,7 @@ export interface ValueRef extends PrefabComponentOptionBase {
 
 export type PrefabComponentOption = ValueDefault | ValueRef;
 
-interface BaseConfiguration {
+export interface BaseConfiguration {
   condition?: {
     type: 'SHOW' | 'HIDE';
     option: string;
