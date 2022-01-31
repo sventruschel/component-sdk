@@ -19,22 +19,12 @@ const defaultAttributes = {
   value: '',
 };
 
-export const buttongroup =
-  (
-    label: string,
-    options: [string, string][],
-    attrs: Attributes = {},
-  ): OptionProducer =>
+export const text =
+  (label: string, attrs: Attributes = {}): OptionProducer =>
   (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
-    type: 'CUSTOM',
+    type: 'TEXT',
     label,
-    configuration: {
-      as: 'BUTTONGROUP',
-      dataType: 'string',
-      allowedInput: options.map(([name, value]) => ({ name, value })),
-      ...((attrs.configuration as any) || {}),
-    },
   });

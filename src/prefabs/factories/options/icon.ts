@@ -16,25 +16,15 @@ type Attributes =
   | Omit<ValueRef, RedundantKeys>;
 
 const defaultAttributes = {
-  value: '',
+  value: 'none',
 };
 
-export const buttongroup =
-  (
-    label: string,
-    options: [string, string][],
-    attrs: Attributes = {},
-  ): OptionProducer =>
+export const icon =
+  (label: string, attrs: Attributes = {}): OptionProducer =>
   (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
-    type: 'CUSTOM',
+    type: 'ICON',
     label,
-    configuration: {
-      as: 'BUTTONGROUP',
-      dataType: 'string',
-      allowedInput: options.map(([name, value]) => ({ name, value })),
-      ...((attrs.configuration as any) || {}),
-    },
   });

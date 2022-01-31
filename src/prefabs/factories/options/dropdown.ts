@@ -11,7 +11,7 @@ type OptionProducer = (key: string) => PrefabComponentOption;
 // Omit is currently desctructive to union/extended types see
 // So we have to Omit each variant as a work around
 type RedundantKeys = 'type' | 'key' | 'label';
-type Attributes =
+export type Attributes =
   | PartialBy<Omit<ValueDefault, RedundantKeys>, 'value'>
   | Omit<ValueRef, RedundantKeys>;
 
@@ -19,11 +19,13 @@ const defaultAttributes = {
   value: '',
 };
 
-export const dropdown = (
-  label: string,
-  options: [string, string][],
-  attrs: Attributes = {},
-): OptionProducer => (key) => ({
+export const dropdown =
+  (
+    label: string,
+    options: [string, string][],
+    attrs: Attributes = {},
+  ): OptionProducer =>
+  (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
