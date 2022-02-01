@@ -41,7 +41,7 @@ export interface BasePrefabInteraction<T extends InteractionType> {
     sourceComponentId: string;
     targetComponentId?: string;
   };
-  targetOptionName: string;
+  targetOptionName?: string;
   sourceEvent: string;
   type: T;
 }

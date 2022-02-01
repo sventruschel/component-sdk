@@ -16,15 +16,15 @@ type Attributes =
   | Omit<ValueRef, RedundantKeys>;
 
 const defaultAttributes = {
-  value: [],
+  value: '',
 };
 
-export const variable =
+export const property =
   (label: string, attrs: Attributes = {}): OptionProducer =>
   (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
-    type: 'VARIABLE',
+    type: 'PROPERTY',
     label,
   });
