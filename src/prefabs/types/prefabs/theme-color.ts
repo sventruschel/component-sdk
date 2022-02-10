@@ -1,0 +1,16 @@
+export enum ThemeColor {
+  PRIMARY = 'PRIMARY',
+  SECONDARY = 'SECONDARY',
+  SUCCESS = 'SUCCESS',
+  INFO = 'INFO',
+  WARNING = 'WARNING',
+  DANGER = 'DANGER',
+  BLACK = 'BLACK',
+  DARK = 'DARK',
+  MEDIUM = 'MEDIUM',
+  LIGHT = 'LIGHT',
+  WHITE = 'WHITE',
+  ACCENT_1 = 'ACCENT 1',
+  ACCENT_2 = 'ACCENT 2',
+  ACCENT_3 = 'ACCENT 3',
+}
