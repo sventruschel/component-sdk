@@ -3,6 +3,7 @@ import {
   ValueDefault,
   ValueRef,
 } from '../../types/options';
+import { ThemeColor } from '../../types/prefabs/theme-color';
 
 type OptionProducer = (key: string) => PrefabComponentOption;
 
@@ -14,11 +15,13 @@ type Attributes =
   | Omit<ValueDefault, RedundantKeys>
   | Omit<ValueRef, RedundantKeys>;
 
+type ColorAttributes = Omit<Attributes, 'value'> & { value: ThemeColor }
+
 const defaultAttributes = {
   value: [],
 };
 
-export const color = (label: string, attrs: Attributes): OptionProducer => (key) => ({
+export const color = (label: string, attrs: ColorAttributes): OptionProducer => (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,
