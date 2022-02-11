@@ -34,7 +34,7 @@ export const dropdown =
     configuration: {
       as: 'DROPDOWN',
       dataType: 'string',
-      allowedInput: [options.map(([name, value]) => ({ name, value }))],
+      allowedInput: options.map(([name, value]) => ({ name, value })),
       ...((attrs.configuration as any) || {}),
     },
   });

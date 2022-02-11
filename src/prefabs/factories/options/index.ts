@@ -10,5 +10,8 @@ export { dropdown } from './dropdown';
 export { number } from './number';
 export { text } from './text';
 export { icon } from './icon';
+export { filter } from './filter';
+export { model } from './model';
+export { property } from './property';
 
 export * from './configurations';
