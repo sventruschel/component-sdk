@@ -9,11 +9,11 @@ export type BeforeCreateArgs = {
   prefab: Prefab;
   prefabs: Prefab[];
   components: {
-    [name: string]: React.ComponentType<any>;
+    [name: string]: any;
   };
 };
 
-type BeforeCreate = (args: BeforeCreateArgs) => void;
+type BeforeCreate = (args: BeforeCreateArgs) => any;
 
 export const prefab = (
   name: string,
