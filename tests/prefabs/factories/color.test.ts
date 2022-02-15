@@ -8,7 +8,7 @@ test('color builds variable option with a value', (t) => {
   })('color');
 
   const expected = {
-    value: 'BLACK',
+    value: 'Black',
     key: 'color',
     type: 'COLOR',
     label: 'Border color (hover)',
