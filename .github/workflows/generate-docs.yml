@@ -27,3 +27,4 @@ jobs:
         uses: ad-m/github-push-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          HUSKY_SKIP_HOOKS: true
