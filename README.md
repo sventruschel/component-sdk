@@ -4,9 +4,9 @@ A collection of APIs to develop on the Betty Blocks platform
 
 ## Documentation
 
-[API docs](https://example.com)
+[API docs](https://bettyblocks.github.io/component-sdk/modules.html)
 
-[Guides](https://example.com)
+[Guides](https://github.com/bettyblocks/cli/wiki/Components:Prefabs-(Experimental))
 
 Generate documentation locally
 
