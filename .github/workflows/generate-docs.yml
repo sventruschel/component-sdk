@@ -22,7 +22,7 @@ jobs:
           git add .
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
           git config --local user.name "${{ github.actor }}"
-          git commit -m "ci: Updated docs" -a --no-verify | exit 0
+          git commit -m "ci: Updated docs [skip ci]" -a --no-verify | exit 0
       - name: Push Changes
         uses: ad-m/github-push-action@master
         env:
