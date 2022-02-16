@@ -28,7 +28,7 @@ export interface BaseConfiguration {
   };
 }
 
-interface VariableConfigration extends BaseConfiguration {
+interface VariableConfiguration extends BaseConfiguration {
   placeholder: string;
 }
 
@@ -44,7 +44,7 @@ interface DropdownConfiguration extends BaseConfiguration {
   allowedInput: { name: string; value: string }[];
 }
 
-export type Configration =
-  | VariableConfigration
+export type Configuration =
+  | VariableConfiguration
   | ButtonGroupConfiguration
   | DropdownConfiguration;

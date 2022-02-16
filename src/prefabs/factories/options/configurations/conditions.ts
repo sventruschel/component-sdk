@@ -1,6 +1,6 @@
-import { Configration } from '../../../types/options';
+import { Configuration } from '../../../types/options';
 
-export const showIfTrue = (key: string): Configration['condition'] => ({
+export const showIfTrue = (key: string): Configuration['condition'] => ({
   type: 'SHOW',
   option: key,
   comparator: 'EQ',
@@ -11,7 +11,7 @@ export const showIf = (
   key: string,
   comparator: 'EQ',
   value: string | boolean,
-): Configration['condition'] => ({
+): Configuration['condition'] => ({
   type: 'SHOW',
   option: key,
   comparator,
@@ -22,7 +22,7 @@ export const hideIf = (
   key: string,
   comparator: 'EQ',
   value: string | boolean,
-): Configration['condition'] => ({
+): Configuration['condition'] => ({
   type: 'HIDE',
   option: key,
   comparator,
