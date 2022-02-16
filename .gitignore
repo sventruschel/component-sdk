@@ -40,9 +40,5 @@ dist/**/*
 # ignore yarn.lock
 yarn.lock
 
-
-# typedoc
-docs
-
 # build
 build
