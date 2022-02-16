@@ -1,0 +1,29 @@
+name: Release
+on:
+  push:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+      - name: Use Node.js 16.11.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.11.1'
+      - run: npm install
+      - name: Run build:docs
+        run: npm run build:docs
+      - name: Commit files
+        run: |
+          echo ${{ github.ref }}
+          git add .
+          git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+          git config --local user.name "${{ github.actor }}"
+          git commit -m "ci: Updated docs" -a | exit 0
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
