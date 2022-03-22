@@ -7,6 +7,7 @@ export interface PrefabComponent {
   descendants: PrefabComponent[];
   name: string;
   options: PrefabComponentOption[];
+  $afterCreate?: Hook[];
   $afterDelete?: Hook[];
   $onUpdate?: Hook[];
   ref?: {
