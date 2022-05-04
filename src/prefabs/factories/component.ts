@@ -1,5 +1,5 @@
 import type { IdentityRecordBy } from '../../type-utils';
-import type { PrefabComponent } from '../types/component';
+import type { PrefabComponent, PrefabReference } from '../types/component';
 
 type RequiredAttrs = Omit<PrefabComponent, 'name' | 'descendants'>;
 type UnresolvedAttributes = IdentityRecordBy<
@@ -19,20 +19,36 @@ const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
   };
 };
 
+
 /**
- * Create a component prefab
- *
- * @param name name of the component
- * @param attrs attributes
- * @param descendants a list of child prefab components
- * @returns
- */
+* Create a partial prefab
+*
+* @param type name of the type (this should always be 'PARTIAL')
+* @returns
+*/
+export const partial = (
+  type: 'PARTIAL',
+  ) : PrefabReference => ({
+    type,
+  })
+  
+  /**
+   * Create a component prefab
+   *
+   * @param name name of the component
+   * @param attrs attributes
+     * @param type PARTIAL or COMPONENT
+   * @param descendants a list of child prefab components
+   * @returns
+   */
+
 export const component = (
   name: string,
   attrs: UnresolvedAttributes,
-  descendants: PrefabComponent[],
-): PrefabComponent => ({
+  type: 'PARTIAL' | 'COMPONENT',
+  descendants: PrefabReference[],
+): PrefabReference => ({ 
     name,
     ...resolveAttributes(attrs),
     descendants,
-  });
+  }) as PrefabReference
