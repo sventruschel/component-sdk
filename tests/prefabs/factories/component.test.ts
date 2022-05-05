@@ -3,11 +3,12 @@ import { component, partial } from '../../../src/prefabs/factories/component';
 import { variable, showIfTrue } from '../../../src/prefabs/factories/options';
 
 test('component builds empty component', (t) => {
-  const result = component('Text', {options: {}}, 'COMPONENT', []);
+  const result = component('Text', {options: {}}, []);
   const expected = {
     name: 'Text',
     options: [],
     descendants: [],
+    type: 'COMPONENT'
   };
 
   t.deepEqual(result, expected);
@@ -15,7 +16,7 @@ test('component builds empty component', (t) => {
 });
 
 test('partial builds empty partial', (t) => {
-  const result = partial('PARTIAL');
+  const result = partial();
   const expected = {
     type: 'PARTIAL',
   };
@@ -36,7 +37,6 @@ test('component builds an option', (t) => {
         }),
       },
     },
-    'COMPONENT',
     [],
   );
 
@@ -45,8 +45,8 @@ test('component builds an option', (t) => {
     options: [
       {
         key: 'content',
-        label: 'Value',
         type: 'VARIABLE',
+        label: 'Value',
         value: [],
         configuration: {
           condition: {
@@ -59,6 +59,7 @@ test('component builds an option', (t) => {
       },
     ],
     descendants: [],
+    type: 'COMPONENT',
   };
 
   t.deepEqual(result, expected);

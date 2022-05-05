@@ -23,21 +23,16 @@ const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
 /**
 * Create a partial prefab
 *
-* @param type name of the type (this should always be 'PARTIAL')
 * @returns
 */
-export const partial = (
-  type: 'PARTIAL',
-  ) : PrefabReference => ({
-    type,
+export const partial = () : PrefabReference => ({
+    type: 'PARTIAL',
   })
-  
   /**
    * Create a component prefab
    *
    * @param name name of the component
    * @param attrs attributes
-     * @param type PARTIAL or COMPONENT
    * @param descendants a list of child prefab components
    * @returns
    */
@@ -45,10 +40,10 @@ export const partial = (
 export const component = (
   name: string,
   attrs: UnresolvedAttributes,
-  type: 'PARTIAL' | 'COMPONENT',
   descendants: PrefabReference[],
 ): PrefabReference => ({ 
     name,
     ...resolveAttributes(attrs),
     descendants,
+    type: 'COMPONENT',
   }) as PrefabReference
