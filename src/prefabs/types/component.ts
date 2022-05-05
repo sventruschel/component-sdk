@@ -2,7 +2,14 @@ import { PrefabAction } from './actions';
 import { PrefabComponentOption } from './options';
 import { Hook } from './hook';
 
+export type PrefabReference = PrefabPartial | PrefabComponent;
+
+export interface PrefabPartial {
+  type: "PARTIAL";
+}
+
 export interface PrefabComponent {
+  type?: "COMPONENT";
   actions?: PrefabAction[];
   descendants: PrefabComponent[];
   name: string;

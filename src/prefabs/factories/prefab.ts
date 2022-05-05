@@ -1,4 +1,4 @@
-import { PrefabComponent } from '../types/component';
+import { PrefabReference } from '../types/component';
 import { Prefab } from '../types/prefabs';
 
 type Attributes = Omit<Prefab, 'name' | 'structure' | 'beforeCreate'>;
@@ -19,7 +19,7 @@ export const prefab = (
   name: string,
   attr: Attributes,
   beforeCreate: BeforeCreate | undefined,
-  structure: PrefabComponent[],
+  structure: PrefabReference[],
 ): Prefab => ({
   name,
   ...attr,
