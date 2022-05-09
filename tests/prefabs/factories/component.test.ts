@@ -1,14 +1,45 @@
 import test from 'tape';
 import { component, partial } from '../../../src/prefabs/factories/component';
-import { variable, showIfTrue } from '../../../src/prefabs/factories/options';
+import {
+  variable,
+  showIfTrue,
+  toggle,
+} from '../../../src/prefabs/factories/options';
 
 test('component builds empty component', (t) => {
-  const result = component('Text', {options: {}}, []);
+  const result = component('Text', { options: {} }, []);
   const expected = {
     name: 'Text',
     options: [],
     descendants: [],
-    type: 'COMPONENT'
+    type: 'COMPONENT',
+  };
+
+  t.deepEqual(result, expected);
+  t.end();
+});
+
+test('component ignores null options', (t) => {
+  const result = component(
+    'Text',
+    {
+      options: {
+        shouldNotExist: null,
+        shouldExist: toggle('ShouldExist', { value: false }),
+      },
+    },
+    [],
+  );
+  const expected = {
+    name: 'Text',
+    options: [{
+      label: 'ShouldExist',
+      key: 'shouldExist',
+      type: 'TOGGLE',
+      value: false
+    }],
+    descendants: [],
+    type: 'COMPONENT',
   };
 
   t.deepEqual(result, expected);
