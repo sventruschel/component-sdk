@@ -8,7 +8,7 @@ A collection of APIs to develop on the Betty Blocks platform
 
 [Guides](https://github.com/bettyblocks/cli/wiki/Components:Prefabs-(Experimental))
 
-Generate documentation locally
+Generate documentation locally:
 
 ```bash
     npm run build:docs

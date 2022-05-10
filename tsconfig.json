@@ -3,6 +3,7 @@
   "include": ["src/**/*", "tests/**/*"],
   "exclude": ["build", "node_modules"],
   "compilerOptions": {
+    "esModuleInterop": true,
     "declaration": true,
     "outDir": "./build",
     "rootDirs": ["./src", "./test"],
