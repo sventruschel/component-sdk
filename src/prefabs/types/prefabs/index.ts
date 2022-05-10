@@ -1,3 +1,3 @@
 export * from './prefabs';
 export * from './icon';
-export * from './theme-color'
+export * from './theme-color';

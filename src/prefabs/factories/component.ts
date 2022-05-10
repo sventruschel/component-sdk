@@ -1,7 +1,7 @@
 import type { IdentityRecordBy } from '../../type-utils';
 import type { PrefabComponent, PrefabReference } from '../types/component';
 
-function isNotNullEntry <T, X>(entry: [T, X]): entry is [T, NonNullable<X>] {
+function isNotNullEntry<T, X>(entry: [T, X]): entry is [T, NonNullable<X>] {
   const [, option] = entry;
   return option !== null;
 }
@@ -25,31 +25,31 @@ const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
   };
 };
 
-
 /**
-* Create a partial prefab
-*
-* @returns
-*/
-export const partial = () : PrefabReference => ({
-    type: 'PARTIAL',
-  })
-  /**
-   * Create a component prefab
-   *
-   * @param name name of the component
-   * @param attrs attributes
-   * @param descendants a list of child prefab components
-   * @returns
-   */
+ * Create a partial prefab
+ *
+ * @returns
+ */
+export const partial = (): PrefabReference => ({
+  type: 'PARTIAL',
+});
+/**
+ * Create a component prefab
+ *
+ * @param name name of the component
+ * @param attrs attributes
+ * @param descendants a list of child prefab components
+ * @returns
+ */
 
 export const component = (
   name: string,
   attrs: UnresolvedAttributes,
   descendants: PrefabReference[],
-): PrefabReference => ({ 
+): PrefabReference =>
+  ({
     name,
     ...resolveAttributes(attrs),
     descendants,
     type: 'COMPONENT',
-  }) as PrefabReference
+  } as PrefabReference);

@@ -19,10 +19,9 @@ const defaultAttributes = {
   value: '',
 };
 
-export const endpoint = (
-  label: string,
-  attrs: Attributes = {},
-): OptionProducer => (key) => ({
+export const endpoint =
+  (label: string, attrs: Attributes = {}): OptionProducer =>
+  (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,

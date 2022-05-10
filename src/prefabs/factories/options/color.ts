@@ -15,13 +15,15 @@ type Attributes =
   | Omit<ValueDefault, RedundantKeys>
   | Omit<ValueRef, RedundantKeys>;
 
-type ColorAttributes = Omit<Attributes, 'value'> & { value: ThemeColor }
+type ColorAttributes = Omit<Attributes, 'value'> & { value: ThemeColor };
 
 const defaultAttributes = {
   value: [],
 };
 
-export const color = (label: string, attrs: ColorAttributes): OptionProducer => (key) => ({
+export const color =
+  (label: string, attrs: ColorAttributes): OptionProducer =>
+  (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,

@@ -32,12 +32,14 @@ test('component ignores null options', (t) => {
   );
   const expected = {
     name: 'Text',
-    options: [{
-      label: 'ShouldExist',
-      key: 'shouldExist',
-      type: 'TOGGLE',
-      value: false
-    }],
+    options: [
+      {
+        label: 'ShouldExist',
+        key: 'shouldExist',
+        type: 'TOGGLE',
+        value: false,
+      },
+    ],
     descendants: [],
     type: 'COMPONENT',
   };

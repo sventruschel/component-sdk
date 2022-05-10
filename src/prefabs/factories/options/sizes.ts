@@ -18,7 +18,9 @@ const defaultAttributes = {
   value: [],
 };
 
-export const sizes = (label: string, attrs: Attributes): OptionProducer => (key) => ({
+export const sizes =
+  (label: string, attrs: Attributes): OptionProducer =>
+  (key) => ({
     ...defaultAttributes,
     ...attrs,
     key,

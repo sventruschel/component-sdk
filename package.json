@@ -13,16 +13,17 @@
     "node": "^16.11.1"
   },
   "scripts": {
-    "build": "tsc",
-    "build:docs": "typedoc src/index.ts --exclude **/*.test.ts",
-    "fix": "prettier --check 'src/**/*.ts'",
-    "fix:write": "prettier --write 'src/**/*.ts'",
-    "lint": "eslint src/ --ext .ts",
+    "build": "tsc --project tsconfig.build.json",
+    "build:docs": "typedoc src/index.ts --exclude tests/**/*.test.ts",
+    "fix": "prettier --check 'src/**/*.ts' 'tests/**/*.ts'",
+    "fix:write": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
+    "lint": "eslint src tests --ext .ts",
     "test": "ts-node node_modules/tape/bin/tape tests/**/*.test.ts | tap-diff",
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@commitlint/config-angular": "^16.0.0",
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-angular": "^16.2.4",
     "@tsconfig/node16": "^1.0.2",
     "@types/react": "^17.0.38",
     "@types/tape": "^4.13.2",
@@ -33,7 +34,7 @@
     "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
-    "husky": "^7.0.0",
+    "husky": "^8.0.1",
     "prettier": "2.5.1",
     "semantic-release": "^19.0.2",
     "tap-diff": "^0.1.1",

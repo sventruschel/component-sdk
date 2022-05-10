@@ -5,11 +5,11 @@ import { Hook } from './hook';
 export type PrefabReference = PrefabPartial | PrefabComponent;
 
 export interface PrefabPartial {
-  type: "PARTIAL";
+  type: 'PARTIAL';
 }
 
 export interface PrefabComponent {
-  type?: "COMPONENT";
+  type?: 'COMPONENT';
   actions?: PrefabAction[];
   descendants: PrefabComponent[];
   name: string;

@@ -20,7 +20,7 @@ export type IdentityBy<T, K extends keyof T, ARGS extends Array<any>> = Omit<
 > &
   Identities<Pick<T, K>, ARGS>;
 
-type IdentityFeatures = 'nullable' | ''
+type IdentityFeatures = 'nullable' | '';
 
 export type IdentityRecordBy<
   T,

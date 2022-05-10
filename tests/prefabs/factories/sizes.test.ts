@@ -1,7 +1,7 @@
 import test from 'tape';
 import { sizes } from '../../../src/prefabs/factories/options/index';
 
-test('sizes builds variable option with a value', (t) => {
+test('sizes builds a variable option with a value', (t) => {
   const result = sizes('Sizes', { value: ['0rem', '0rem', '0rem', '0rem'] })(
     'sizes',
   );
