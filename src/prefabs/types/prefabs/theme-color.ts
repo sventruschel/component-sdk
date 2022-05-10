@@ -13,5 +13,5 @@ export enum ThemeColor {
   ACCENT_1 = 'Accent1',
   ACCENT_2 = 'Accent2',
   ACCENT_3 = 'Accent3',
-  TRANSPARENT = 'transparent'
+  TRANSPARENT = 'transparent',
 }

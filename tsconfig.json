@@ -1,11 +1,11 @@
 {
   "extends": "@tsconfig/node16/tsconfig.json",
-  "include": ["src/**/*"],
-  "exclude": ["tests/**/*", "build", "node_modules"],
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["build", "node_modules"],
   "compilerOptions": {
     "declaration": true,
     "outDir": "./build",
-    "rootDir": "./src",
+    "rootDirs": ["./src", "./test"],
     "skipLibCheck": false,
     "strict": true
   }

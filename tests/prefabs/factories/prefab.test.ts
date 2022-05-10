@@ -27,7 +27,7 @@ test('prefab builds empty prefab', (t) => {
 });
 
 test('builds a prefab with structure where the root is a partial', (t) => {
-  const structure = partial()
+  const structure = partial();
   const result = prefab(
     'Prefab',
     {
@@ -46,7 +46,7 @@ test('builds a prefab with structure where the root is a partial', (t) => {
     structure: [
       {
         type: 'PARTIAL',
-      }
+      },
     ],
   };
 
@@ -54,9 +54,7 @@ test('builds a prefab with structure where the root is a partial', (t) => {
   t.end();
 });
 test('builds a prefab with structure where the root is a component and has a partial as descendant', (t) => {
-  const structure = component('Column', {options: {}}, [
-    partial(),
-  ]);
+  const structure = component('Column', { options: {} }, [partial()]);
 
   const result = prefab(
     'Prefab',
@@ -77,11 +75,13 @@ test('builds a prefab with structure where the root is a component and has a par
       {
         name: 'Column',
         options: [],
-        descendants: [{
-          type: 'PARTIAL'
-        }],
+        descendants: [
+          {
+            type: 'PARTIAL',
+          },
+        ],
         type: 'COMPONENT',
-      }
+      },
     ],
   };
 
