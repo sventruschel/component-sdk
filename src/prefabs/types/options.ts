@@ -8,7 +8,7 @@ export interface PrefabComponentOptionBase {
 }
 
 export interface ValueDefault extends PrefabComponentOptionBase {
-  value: boolean | string[] | string | ValueConfig;
+  value: boolean | string[] | string | number | ValueConfig;
 }
 
 export interface ValueRef extends PrefabComponentOptionBase {
