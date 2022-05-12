@@ -35,7 +35,7 @@ export enum InteractionType {
   Global = 'Global',
 }
 
-export interface BasePrefabInteraction<T extends InteractionType> {
+export interface BasePrefabInteraction {
   name: string;
   ref: {
     sourceComponentId: string;
@@ -43,7 +43,6 @@ export interface BasePrefabInteraction<T extends InteractionType> {
   };
   targetOptionName?: string;
   sourceEvent: string;
-  type: T;
 }
 
 export interface ParameterOptionWithId {
@@ -69,11 +68,18 @@ export type PrefabInteractionParameter =
   | ParameterOptionWithPath
   | ParameterOptionWithComponentRef;
 
+export interface PrefabCustomInteraction extends BasePrefabInteraction {
+  type: InteractionType.Custom
+}
+
+export interface PrefabGlobalInteraction extends BasePrefabInteraction {
+  type: InteractionType.Custom,
+  parameters: PrefabInteractionParameter[];
+}
+
 export type PrefabInteraction =
-  | BasePrefabInteraction<InteractionType.Custom>
-  | (BasePrefabInteraction<InteractionType.Global> & {
-      parameters: PrefabInteractionParameter[];
-    });
+  | PrefabCustomInteraction
+  | PrefabGlobalInteraction;
 
 export interface PrefabVariable {
   kind: PrefabVariableKind;
