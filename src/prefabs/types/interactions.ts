@@ -73,7 +73,7 @@ export interface PrefabCustomInteraction extends BasePrefabInteraction {
 }
 
 export interface PrefabGlobalInteraction extends BasePrefabInteraction {
-  type: InteractionType.Custom,
+  type: InteractionType.Global,
   parameters: PrefabInteractionParameter[];
 }
 
