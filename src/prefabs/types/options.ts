@@ -18,6 +18,7 @@ export interface ValueRef extends PrefabComponentOptionBase {
 }
 
 export type PrefabComponentOption = ValueDefault | ValueRef;
+export type OptionProducer = (key: string) => PrefabComponentOption;
 
 export interface BaseConfiguration {
   condition?: {
