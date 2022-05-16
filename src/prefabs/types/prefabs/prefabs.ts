@@ -1,18 +1,29 @@
 import { Icon } from './icon';
 import { PrefabAction } from '../actions';
-import { PrefabReference } from '../component';
+import { PrefabComponent, PrefabReference } from '../component';
 import { PrefabInteraction, PrefabVariable } from '../interactions';
 
-export interface Prefab {
-  actions?: PrefabAction[];
-  beforeCreate?: string;
-  category: string;
+export interface BasePrefab {
   name: string;
+  description?: string;
+  beforeCreate?: string;
+  actions?: PrefabAction[];
+  category: string;
   keywords?: string[];
   icon: Icon;
   interactions?: PrefabInteraction[];
-  structure: PrefabReference[];
   variables?: PrefabVariable[];
-  type?: string;
-  description?: string;
+}
+
+export interface ComponentPrefab extends BasePrefab {
+  structure: PrefabComponent[];
+}
+
+export interface PagePrefab extends BasePrefab {
+  type: 'page';
+  structure: PrefabReference[];
+}
+
+export interface PartialPrefab extends BasePrefab {
+  structure: PrefabComponent[];
 }

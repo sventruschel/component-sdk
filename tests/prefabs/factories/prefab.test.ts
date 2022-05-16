@@ -1,5 +1,5 @@
 import test from 'tape';
-import { prefab } from '../../../src/prefabs/factories';
+import { prefab, pagePrefab } from '../../../src/prefabs/factories';
 import { Icon } from '../../../src/prefabs/types/prefabs';
 import { partial, component } from '../../../src/prefabs/factories/component';
 
@@ -28,11 +28,12 @@ test('prefab builds empty prefab', (t) => {
 
 test('builds a prefab with structure where the root is a partial', (t) => {
   const structure = partial();
-  const result = prefab(
+  const result = pagePrefab(
     'Prefab',
     {
       category: 'FORM',
       icon: Icon.FormIcon,
+      type: 'page',
     },
     () => null,
     [structure],
@@ -56,11 +57,12 @@ test('builds a prefab with structure where the root is a partial', (t) => {
 test('builds a prefab with structure where the root is a component and has a partial as descendant', (t) => {
   const structure = component('Column', { options: {} }, [partial()]);
 
-  const result = prefab(
+  const result = pagePrefab(
     'Prefab',
     {
       category: 'FORM',
       icon: Icon.FormIcon,
+      type: 'page',
     },
     () => null,
     [structure],
