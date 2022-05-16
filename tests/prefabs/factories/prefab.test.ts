@@ -43,6 +43,7 @@ test('builds a prefab with structure where the root is a partial', (t) => {
     name: 'Prefab',
     category: 'FORM',
     icon: 'FormIcon',
+    type: 'page',
     beforeCreate: '() => null',
     structure: [
       {
@@ -72,6 +73,7 @@ test('builds a prefab with structure where the root is a component and has a par
     name: 'Prefab',
     category: 'FORM',
     icon: 'FormIcon',
+    type: 'page',
     beforeCreate: '() => null',
     structure: [
       {
