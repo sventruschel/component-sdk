@@ -1,4 +1,4 @@
-import { PrefabReference } from '../types/component';
+import { PrefabComponent, PrefabPartial } from '../types/component';
 import { PagePrefab } from '../types/prefabs';
 
 type Attributes = Omit<PagePrefab, 'name' | 'structure' | 'beforeCreate'>;
@@ -19,7 +19,7 @@ export const pagePrefab = (
   name: string,
   attr: Attributes,
   beforeCreate: BeforeCreate | undefined,
-  structure: PrefabReference[],
+  structure: (PrefabComponent | PrefabPartial)[],
 ): PagePrefab => ({
   name,
   ...attr,

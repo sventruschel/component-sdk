@@ -1,5 +1,9 @@
 import test from 'tape';
-import { prefab, pagePrefab } from '../../../src/prefabs/factories';
+import {
+  prefab,
+  pagePrefab,
+  partialPrefab,
+} from '../../../src/prefabs/factories';
 import { Icon } from '../../../src/prefabs/types/prefabs';
 import { partial, component } from '../../../src/prefabs/factories/component';
 
@@ -92,3 +96,50 @@ test('builds a prefab with structure where the root is a component and has a par
   t.deepEqual(result, expected);
   t.end();
 });
+
+test('partial prefab succesfully builds', (t) => {
+  const structure = component('Text', { options: {} }, []);
+  const result = partialPrefab(
+    'PartialTest',
+    {
+      category: 'LAYOUT',
+      icon: Icon.Layout1Icon,
+    },
+    () => null,
+    [structure],
+  );
+  const expected = {
+    name: 'PartialTest',
+    category: 'LAYOUT',
+    icon: 'Layout1Icon',
+    beforeCreate: '() => null',
+    structure: [{ name: 'Text', options: [], descendants: [], type: 'COMPONENT' }],
+  };
+
+  t.deepEqual(result, expected);
+  t.end();
+});
+
+// test('partial prefab throws when partial in structure ', (t) => {
+//   // fix me
+//   const structure = component('Text', { options: {} }, [partial()]);
+//   const result = partialPrefab(
+//     'PartialTest',
+//     {
+//       category: 'LAYOUT',
+//       icon: Icon.Layout1Icon,
+//     },
+//     () => null,
+//     [structure],
+//   );
+//   const expected = {
+//     name: 'PartialTest',
+//     category: 'LAYOUT',
+//     icon: 'Layout1Icon',
+//     beforeCreate: '() => null',
+//     structure: [{ name: 'Text', options: [], descendants: [], type: 'COMPONENT' }],
+//   };
+
+//   t.deepEqual(result, expected);
+//   t.end();
+// });

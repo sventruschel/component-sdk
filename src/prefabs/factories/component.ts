@@ -1,5 +1,5 @@
 import type { IdentityRecordBy } from '../../type-utils';
-import type { PrefabComponent, PrefabReference } from '../types/component';
+import type { PrefabComponent, PrefabPartial, PrefabReference } from '../types/component';
 
 function isNotNullEntry<T, X>(entry: [T, X]): entry is [T, NonNullable<X>] {
   const [, option] = entry;
@@ -30,7 +30,7 @@ const resolveAttributes = (attrs: UnresolvedAttributes): RequiredAttrs => {
  *
  * @returns
  */
-export const partial = (): PrefabReference => ({
+export const partial = (): PrefabPartial => ({
   type: 'PARTIAL',
 });
 /**
@@ -46,10 +46,11 @@ export const component = (
   name: string,
   attrs: UnresolvedAttributes,
   descendants: PrefabReference[],
-): PrefabReference =>
+): PrefabComponent =>
   ({
     name,
     ...resolveAttributes(attrs),
     descendants,
     type: 'COMPONENT',
-  } as PrefabReference);
+    // fix me
+  } as PrefabComponent);
